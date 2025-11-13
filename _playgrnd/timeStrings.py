@@ -25,8 +25,6 @@ def justYoloIt(string):
     # 'a.c.' ? -> take the prior numbers + '-' (are negative times even supported?)
         # if u take anything else, go fk lol
 
-    # idk
-
     day = 12
     month = 10
     year = 2020
