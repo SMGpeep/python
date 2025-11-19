@@ -33,7 +33,10 @@ while (True):
             vrname = input("Vorname:")
             nachname = input("Nachname:")
             bday = input("Geburtsdatum:")
-            myDB.addPerson(pers.Person(pers.Name(vrname, nachname), bday))
+            try:
+                myDB.addPerson(pers.Person(pers.Name(vrname, nachname), bday))
+            except ValueError as e:
+                print(f"Person existiert schon! [(kein valueError btw){e}]")
             print(f"{vrname} {nachname} wurde erfolgreich hinzugefügt")
 
         case 2:
