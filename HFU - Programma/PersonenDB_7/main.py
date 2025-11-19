@@ -13,7 +13,14 @@ while (True):
     print("4: Datei speichern")
     print("5: Datei lesen")
     print("???: Person entfernen")
-    mode = int(input("Bitte wählen Sie eine Nummer"))
+    mode = input("Bitte wählen Sie eine Nummer \n")
+
+    try:
+        mode = int(mode)
+
+    except ValueError as e:
+        print(f"Wrong input! [{e}]")
+        continue
 
     match mode:
 
