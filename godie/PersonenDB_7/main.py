@@ -12,7 +12,7 @@ while (True):
     print("3: Person entfernen")
     print("4: Datei speichern")
     print("5: Datei lesen")
-    print("???: Person entfernen")  
+    print("6: print personas")
     mode = input("Bitte wählen Sie eine Nummer \n")
 
     try:
@@ -41,7 +41,7 @@ while (True):
             print("Geben Sie PersonenDaten an:")
             vrname = input("Vorname:")
             nachname = input("Nachname:")
-            pers = myDB.findPerson(vrname, nachname)
+            pers = myDB.findPerson(pers.Name(vrname, nachname))
             if pers == None:
                 print(f"Ich kenne {vrname}, {nachname} nicht :(")
             else:
@@ -53,7 +53,7 @@ while (True):
             print("Geben Sie PersonenDaten an:")
             vrname = input("Vorname:")
             nachname = input("Nachname:")
-            if myDB.removePerson(vrname, nachname):
+            if myDB.removePerson(pers.Name(vrname, nachname)):
                 print(f"{vrname} {nachname} wurde erfolgreich gelöscht")
             else:
                 print(f"konnte {vrname} {nachname} nicht löschen")

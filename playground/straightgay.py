@@ -22,7 +22,6 @@ def minus(a, b):
         return a
     return minus(a - 1, b - 1)
 
-
 @timer
 def gay():
     return add(3, 1900045)
@@ -35,7 +34,6 @@ def supergay():
 @timer
 def superstraight():
     return 3- 1900045
-
 
 @timer
 def straight():
@@ -50,6 +48,5 @@ def main():
     print(straight())
     print(supergay())
     print(superstraight())
-
 
 main()

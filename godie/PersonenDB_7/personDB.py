@@ -11,16 +11,16 @@ class PersonDB:
     def clear(self):
         self.persons = {}
 
-    def findPerson(self, vorname, nachname):
+    def findPerson(self, name):
         for (key,value) in self.persons.items():
-            if (key.vorname.strip().lower() == vorname.strip().lower()
-                            and key.nachname.strip().lower() == nachname.strip().lower())  :
+            if (key.vorname.strip().lower() == name.vorname.strip().lower()
+                            and key.nachname.strip().lower() == name.nachname.strip().lower())  :
                 return value
         return None
 
-    def removePerson(self,  vorname, nachname):
+    def removePerson(self,  name):
 
-        person = self.findPerson(vorname, nachname)
+        person = self.findPerson(name)
         if(person is None):
             return False
         print(f"removing person ({person}) in file: {self.persons}")
