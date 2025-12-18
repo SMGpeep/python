@@ -1,5 +1,16 @@
 import sys
-from utils.timer import timer
+
+
+def timer(func):
+    import time
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"Function {func.__name__} took {end - start:.6f} seconds")
+        return result
+
+    return wrapper
 
 def add(a, b):
     if b == -b:
@@ -15,9 +26,11 @@ def minus(a, b):
 def gay():
     return add(3, 1900045)
 
+
 @timer
 def supergay():
     return minus(3, 1900045)
+
 @timer
 def superstraight():
     return 3- 1900045
@@ -26,7 +39,9 @@ def superstraight():
 def straight():
     return 3 + 1900045
 
+
 sys.setrecursionlimit(4000000)
+
 
 def main():
     print(gay())
