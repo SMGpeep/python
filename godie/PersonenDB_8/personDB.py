@@ -6,28 +6,21 @@ class PersonDB:
         self.persons = {}
 
     def addPerson(self, person):
-        if self.persons.values().contains(person):
-            raise ValueError(person)
+        if self.persons.get(person.name):
+            raise ValueError(f"{person} existiert bereits !!")
         self.persons.update({person.name : person})
 
     def clear(self):
         self.persons = {}
 
-    def findPerson(self, vorname, nachname):
-        for (key,value) in self.persons.items():
-            if (key.vorname.strip().lower() == vorname.strip().lower()
-                            and key.nachname.strip().lower() == nachname.strip().lower())  :
-                return value
-        return None
+    def findPerson(self, name):
+           return self.persons.get(name)
 
-    def removePerson(self,  vorname, nachname):
-
-        person = self.findPerson(vorname, nachname)
-        if(person is None):
-            return False
-        print(f"removing person ({person}) in file: {self.persons}")
-        del self.persons[person.name]
-        return True
+    def removePerson(self, name):
+        try:
+            return self.persons.pop(name)
+        except KeyError:
+            return None
 
     def laden(self,path):
         self.clear()

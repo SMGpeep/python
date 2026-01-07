@@ -1,4 +1,4 @@
-import dfs
+import dfs_human as dfs
 
 def test_mazes(mazes, starts_ends_list):
     results = []
