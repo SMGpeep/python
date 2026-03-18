@@ -7,6 +7,16 @@ class Name:
     def __init__(self, vorname, nachname):
         self.vorname = vorname.strip()
         self.nachname = nachname.strip()
+  
+    def __eq__(self, other):
+
+        if not isinstance(other, Name):
+            return False
+    
+        return self.nachname == other.nachname and self.vorname == other.nachname    
+    
+    def __hash__(self):
+        return hash((self.vorname, self.nachname))
 
     def __str__(self):
         return(f"{self.vorname} {self.nachname}")

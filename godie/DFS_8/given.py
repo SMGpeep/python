@@ -1,4 +1,4 @@
-import dfs
+import dfs_human as dfs
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import ListedColormap
