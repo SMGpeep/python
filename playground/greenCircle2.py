@@ -22,7 +22,7 @@ def includecontour(contour):
     """
     perimeter = cv2.arcLength(contour, True)
     area = cv2.contourArea(contour)
-    if perimeter == 0:
+    if perimeter <= 12 or area <= 100:
         return False
     circularity = 4 * np.pi * area / (perimeter * perimeter)
     # Explanations:
